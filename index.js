@@ -45,48 +45,7 @@ async function getUserInputs() {
   }
 }
 
-async function copyTemplate(dest) {
-  try {
-    await fs.copy("./template", dest);
-    console.log("Template files copied successfully");
-  } catch (error) {
-    console.error("Error copying template:", error);
-  }
-}
 
-async function createPackageJson(destination, { authType, database }) {
-  const dependencies = {
-    express: "^4.17.1",
-    sequelize: "^6.6.5",
-    bcryptjs: "^2.4.3",
-  };
-  if (authType === "JWT") dependencies["jsonwebtoken"] = "^8.5.1";
-  if (database === "Postgres") dependencies["pg"] = "^8.7.1";
-  else if (database === "MySQL") dependencies["mysql2"] = "^2.3.3";
-
-  const devDependencies = {
-    typescript: "^4.4.3",
-    "@types/express": "^4.17.13",
-    "@types/node": "^16.10.1",
-  };
-
-  const packageJson = {
-    name: "express-app",
-    version: "1.0.0",
-    main: "dist/index.js",
-    scripts: {
-      start: "ts-node src/app.ts",
-      build: "tsc",
-    },
-    dependencies,
-    devDependencies,
-  };
-
-  await fs.writeFile(
-    destination + "/package.json",
-    JSON.stringify(packageJson, null, 2)
-  );
-}
 
 async function generateProject(userChoices) {
   const { projectName, authMethod, database } = userChoices;
