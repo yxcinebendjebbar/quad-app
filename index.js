@@ -63,14 +63,7 @@ async function getUserInputs() {
 }
 
 
-async function copyTemplate(dest) {
-    try {
-        await fs.copy('./template', dest)
-        console.log('Template files copied successfully')
-    } catch (error) {
-        console.error('Error copying template:', error)
-    }
-}
+
 
 
 
