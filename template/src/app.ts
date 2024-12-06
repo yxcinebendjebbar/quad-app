@@ -1,6 +1,7 @@
 import express from "express";
-import dotenv from "dotenv";
-
+import * as dotenv from "dotenv";
+import authRoutes from "./routes/authRoutes";
+import userRoutes from "./routes/userRoutes";
 
 dotenv.config();
 
@@ -13,8 +14,11 @@ app.get("/", (req, res) => {
   res.send("Hello, World!");
 });
 
+app.use("/auth",authRoutes);
+app.use("/user",userRoutes);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+
+const port = process.env.SERVER_PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
 });

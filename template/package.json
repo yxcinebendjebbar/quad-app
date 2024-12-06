@@ -30,6 +30,10 @@
     "@types/express": "^4.17.13",
     "@types/node": "^16.10.1",
     "@types/sequelize" : "^4.28.20",
+    "@types/bcryptjs": "^2.4.6",
+    <% if (authMethod === "JWT") { %>
+    "@types/jsonwebtoken": "^9.0.7",
+    <% } %>
     "nodemon":"^3.1.4"
 }
 }

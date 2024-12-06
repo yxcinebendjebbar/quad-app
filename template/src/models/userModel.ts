@@ -1,5 +1,6 @@
 import { DataTypes, Model, Optional } from "sequelize";
 import database from "../config/database"; 
+import bcrypt from "bcryptjs"
 
 
 interface UserAttributes {
@@ -15,15 +16,13 @@ interface UserAttributes {
 interface UserCreationAttributes extends Optional<UserAttributes, "id"> {}
 
 
-class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
+export class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
   public id!: number;
   public username!: string;
   public email!: string;
   public password!: string;
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
-
-  
 }
 
 

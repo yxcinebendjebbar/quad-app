@@ -63,6 +63,7 @@ async function generateProject(userChoices) {
     "src/middlewares/authMiddleware.ts",
     "src/models/userModel.ts",
     "src/routes/authRoutes.ts",
+    "src/routes/userRoutes.ts",
     "tsconfig.json",
     ".env.example",
   ];
@@ -78,7 +79,18 @@ async function generateProject(userChoices) {
 
     fs.outputFileSync(outputFile, content);
   }
+  if (database === "SQLite") {
+    const templateFile = path.join(templatePath, "src/config/database.sqlite");
+    const outputFile = path.join(projectPath, "src/config/database.sqlite");
+
+    const template = fs.readFileSync(templateFile, "utf8");
+
+    const content = ejs.render(template, { projectName, authMethod, database });
+
+    fs.outputFileSync(outputFile, content);
+  }
   execSync("git init");
+  execSync("git branch -M main");
 
   return projectPath;
 }
