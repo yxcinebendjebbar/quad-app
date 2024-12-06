@@ -102,8 +102,10 @@ async function generateProject(userChoices) {
     fs.outputFileSync(outputFile, content);
 
   }
+  execSync(`cd ${projectPath}`)
   execSync("git init");
   execSync("git branch -M main");
+  execSync("cd ..")
 
   return projectPath;
 }
