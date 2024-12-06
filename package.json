@@ -1,18 +1,26 @@
 {
   "name": "quad-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "type": "module",
   "bin": {
     "create-quad-app": "./index.js"
   },
+  "files": [
+    "bin",
+    "template"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["express", "jwt", "session", "sqlite", "mysql", "postgresql", "api", "quad", "quad-app", "create-quad-app", "generator", "backend"],
+  "author": "Quadro Team",
   "license": "MIT",
-  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yxcinebendjebbar/quad-app"
+  },
+  "description": "Quad App CLI is a command-line tool designed to bootstrap a fully customizable Express backend application",
   "dependencies": {
     "chalk": "^5.3.0",
     "commander": "^12.1.0",
