@@ -1,5 +1,6 @@
 <% if (authMethod === "JWT") { %>
 import jwt from "jsonwebtoken";
+import { UserAttributes } from "../models/userModel";
 import { Request, Response, NextFunction } from "express";
 
 export const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
@@ -10,7 +11,7 @@ export const authMiddleware = (req: Request, res: Response, next: NextFunction) 
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET as string);
-        req.user = decoded;
+        req.user = decoded as UserAttributes;
         next();
     } catch (error) {
         res.status(401).json({ message: "Invalid token" });

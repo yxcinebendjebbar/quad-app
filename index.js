@@ -23,7 +23,7 @@ const questions = [
   {
     type: "list",
     name: "authMethod",
-    message: "Which authentication method do you want to use?",
+    message: "Which authentication method do you want to use? (recommended: JWT)",
     choices: ["JWT", "Session"],
   },
   {
@@ -64,6 +64,7 @@ async function generateProject(userChoices) {
     "src/models/userModel.ts",
     "src/routes/authRoutes.ts",
     "src/routes/userRoutes.ts",
+    "src/types/express.d.ts",
     "tsconfig.json",
     ".env.example",
   ];
@@ -88,6 +89,18 @@ async function generateProject(userChoices) {
     const content = ejs.render(template, { projectName, authMethod, database });
 
     fs.outputFileSync(outputFile, content);
+  }
+
+  if (authMethod === "Session") {
+    const templateFile = path.join(templatePath, "src/types/express-session.d.ts");
+    const outputFile = path.join(projectPath, "src/types/express-session.d.ts");
+
+    const template = fs.readFileSync(templateFile, "utf8");
+
+    const content = ejs.render(template, { projectName, authMethod, database });
+
+    fs.outputFileSync(outputFile, content);
+
   }
   execSync("git init");
   execSync("git branch -M main");

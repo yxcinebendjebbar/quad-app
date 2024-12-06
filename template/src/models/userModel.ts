@@ -1,9 +1,10 @@
 import { DataTypes, Model, Optional } from "sequelize";
 import database from "../config/database"; 
 import bcrypt from "bcryptjs"
+import db from "../config/database";
 
 
-interface UserAttributes {
+export interface UserAttributes {
   id: number;
   username: string;
   email: string;
@@ -60,7 +61,7 @@ User.init(
     },
   },
   {
-    database,
+    sequelize:db,
     modelName: "User", 
     tableName: "users",
     timestamps: true, 

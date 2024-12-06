@@ -20,9 +20,9 @@ export const login = async (req: Request, res: Response) => {
 };
 
 export const register = async (req: Request, res: Response) => {
-    const { email, password } = req.body;
+    const {username, email, password } = req.body;
 
-    const newUser = await User.create({ email, password });
+    const newUser = await User.create({username, email, password });
 
     res.status(201).json({ user: newUser });
 };
@@ -53,9 +53,9 @@ export const logout = (req: Request, res: Response) => {
 };
 
 export const register = async (req: Request, res: Response) => {
-    const { email, password } = req.body;
+    const {username, email, password } = req.body;
 
-    const newUser = await User.create({ email, password });
+    const newUser = await User.create({username, email, password });
 
     res.status(201).json({ user: newUser });
 };

@@ -1,9 +1,16 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    "module": "commonjs",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
-    "esModuleInterop": true}
+    "module": "CommonJS",
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node"<% if(authMethod==="Session") { %>, 
+    "typeRoots": ["./node_modules/@types", "./types"] <% } %>
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/types/**/*.d.ts"  // Including the types folder
+  ]
 }

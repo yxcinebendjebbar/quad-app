@@ -11,12 +11,12 @@
     <% } else { %>
     "express-session": "^1.17.3",
     <% } %>
-    "sequelize": "^6.31.0"
-    <% if (database === "sqlite") { %>
+    "sequelize": "^6.31.0",
+    <% if (database === "SQLite") { %>
     "sqlite3": "^5.1.6"
-    <% } else if (database === "mysql") { %>
+    <% } else if (database === "MySQL") { %>
     "mysql2": "^3.5.2"
-    <% } else if (database === "postgres") { %>
+    <% } else if (database === "PostgreSQL") { %>
     "pg": "^8.11.0"
     <% } %>
   },
@@ -33,6 +33,8 @@
     "@types/bcryptjs": "^2.4.6",
     <% if (authMethod === "JWT") { %>
     "@types/jsonwebtoken": "^9.0.7",
+    <% } else { %>
+    "@types/express-session": "^1.18.1",
     <% } %>
     "nodemon":"^3.1.4"
 }
