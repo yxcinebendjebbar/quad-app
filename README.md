@@ -16,7 +16,7 @@ Follow these steps to get started with Quad App CLI:
     You can install the package globally to use it anywhere:
 
 `
-npm install -g create-quad-app
+npm install -g quad-app
 `
 
 2. Use Without Installation (Preferred)
@@ -24,13 +24,13 @@ npm install -g create-quad-app
     Run the tool directly using npx:
 
 `
-npx create-quad-app
+npx quad-app@latest
 `
 ## Usage
 Run the CLI:
 
 `
-npx create-quad-app my-express-app
+npx quad-app@latest
 `
 
 Follow the prompts:
@@ -64,17 +64,17 @@ cp .env.example .env
 
 ## Tools and References
 ### Tools Used
-- Node.js - JavaScript runtime environment.
-- TypeScript - For type-safe JavaScript.
-- Express - Web framework for Node.js.
-- Sequelize - ORM for database integration.
-- EJS - Template engine used for rendering files.
-- Inquirer - For interactive CLI prompts.
+- [Node.js](https://nodejs.org/en) - JavaScript runtime environment.
+- [TypeScript](https://www.typescriptlang.org/) - For type-safe JavaScript.
+- [Express](https://expressjs.com/) - Web framework for Node.js.
+- [Sequelize](https://sequelize.org/) - ORM for database integration.
+- [EJS](https://ejs.co/) - Template engine used for rendering files.
+- [Inquirer](https://www.npmjs.com/package/inquirer) - For interactive CLI prompts.
 
 ### References
-- npm Documentation
-- Semantic Versioning
-- Choose a License
+- [npm Documentation](https://docs.npmjs.com/)
+- [Semantic Versioning](https://semver.org/)
+- [Choose a License](https://choosealicense.com/)
 ## Contributing
 Contributions are welcome! To get started:
 
