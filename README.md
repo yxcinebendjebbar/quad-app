@@ -81,7 +81,7 @@ Contributions are welcome! To get started:
 Fork the repository and clone your fork:
 
 ```
-git clone https://github.com/your-username/quad-app.git
+git clone https://github.com/yxcinebendjebbar/quad-app.git
 
 cd quad-app
 ```
