@@ -1,0 +1,33 @@
+---
+title: Routes
+description: Routes guide for our application.
+---
+
+## Overview
+
+The tool generates starter routes for authentication and CRUD operations, and you can easily add custom routes.
+
+## Adding a New Route
+
+1. Go to the routes directory.
+
+2. Create a new route file, e.g., userRoutes.ts:
+
+```typescript
+import { Router } from "express";
+import UserController from "../controllers/userController";
+
+const router = Router();
+
+router.get("/users", UserController.getAllUsers);
+router.post("/users", UserController.createUser);
+
+export default router;
+```
+
+3. Register the route in the main app.ts:
+
+```typescript
+import userRoutes from "./routes/userRoutes";
+app.use("/api", userRoutes);
+```

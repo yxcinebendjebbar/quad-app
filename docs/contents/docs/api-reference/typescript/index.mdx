@@ -1,0 +1,20 @@
+---
+title: Typescript
+description: Typescript guide for our application.
+---
+
+**Type Safety**: All generated files use TypeScript, ensuring strong typing for models, controllers, and routes.
+
+**Custom Types**: Extend request objects for JWT payload or other custom properties:
+
+```typescript
+declare global {
+  namespace Express {
+    interface Request {
+      user?: { id: number; email: string };
+    }
+  }
+}
+```
+
+[Learn more about TypeScript](https://www.typescriptlang.org/docs/)

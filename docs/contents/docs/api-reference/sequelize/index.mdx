@@ -1,0 +1,15 @@
+---
+title: Sequelize
+description: Sequelize guide for our application.
+---
+
+**ORM Support**: Easily manage database migrations and models.
+
+**Associations**: Define relationships like hasMany and belongsTo. Example:
+
+```typescript
+User.hasMany(Post, { foreignKey: "userId" });
+Post.belongsTo(User, { foreignKey: "userId" });
+```
+
+[Learn more about Sequelize](https://sequelize.org/docs/v6/getting-started/)

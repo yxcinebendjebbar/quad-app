@@ -1,0 +1,35 @@
+---
+title: Controllers
+description: Controllers guide for our application.
+---
+
+## Overview
+
+Controllers handle the business logic for your routes, keeping your code modular and maintainable.
+
+## Creating a Controller
+
+1. Navigate to the controllers folder.
+
+2. Define your controller methods. For example, userController.ts:
+
+```typescript
+import { Request, Response } from "express";
+import User from "../models/user";
+
+const getAllUsers = async (req: Request, res: Response) => {
+  const users = await User.findAll();
+  res.json(users);
+};
+
+const createUser = async (req: Request, res: Response) => {
+  const { name, email, password } = req.body;
+  const user = await User.create({ name, email, password });
+  res.status(201).json(user);
+};
+
+export default {
+  getAllUsers,
+  createUser,
+};
+```
